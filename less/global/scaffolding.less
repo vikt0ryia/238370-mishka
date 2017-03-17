@@ -1,0 +1,30 @@
+body {
+  font-size: @base-font-size;
+  line-height: @base-line-height;
+  font-family: @base-font-family;
+  color: @text-color;
+  font-style: normal;
+
+  background-color: @white;
+}
+
+h2 {
+
+  font-size: @title-font-size;
+  line-height: @base-line-height;
+  font-weight: bold;
+  color: @black;
+
+  @media (min-width: @tablet-widths) {
+
+    font-size: @title-font-size-tablet;
+    line-height: @base-line-height-tablet;
+  }
+
+  @media (min-width: @desktop-widths) {
+
+    font-size: @title-font-size-desktop;
+    line-height: @base-line-height-desktop;
+  }
+
+}
