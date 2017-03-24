@@ -4,27 +4,37 @@ body {
   font-family: @base-font-family;
   color: @text-color;
   font-style: normal;
-
   background-color: @white;
+
+ @media (min-width: @tablet-widths) {
+    font-size: @base-font-size-tablet;
+  }
 }
 
 h2 {
-
   font-size: @title-font-size;
   line-height: @base-line-height;
   font-weight: bold;
   color: @black;
 
   @media (min-width: @tablet-widths) {
-
     font-size: @title-font-size-tablet;
-    line-height: @base-line-height-tablet;
+    line-height: @title-line-height-tablet;
   }
 
   @media (min-width: @desktop-widths) {
-
     font-size: @title-font-size-desktop;
-    line-height: @base-line-height-desktop;
+    line-height: @title-line-height-desktop;
   }
+}
 
+h3 {
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: bold;
+  color: @black;
+
+  @media (min-width: @tablet-widths) {
+    font-size: 20px;
+  }
 }

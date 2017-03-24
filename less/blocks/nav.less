@@ -1,10 +1,11 @@
-.catalog-items {
+.nav-items {
   .items-reset();
   width: 320px;
   margin: 0 auto;
+  margin-bottom: 28px;
 }
 
-.catalog-items__item {
+.nav-items__item {
 
   a {
     display: block;
@@ -32,12 +33,13 @@
 
 @media (min-width: @tablet-widths) {
 
-  .catalog-items {
+  .nav-items {
     .wrapper;
     display: flex;
+    margin-bottom: 45px;
   }
 
-  .catalog-items__item {
+  .nav-items__item {
     width: 50%;
 
     a {
@@ -55,7 +57,7 @@
 }
 
 @media (min-width: @desktop-widths) {
-  .catalog-items__item a {
+  .nav-items__item a {
     padding-right: 350px;
   }
 }

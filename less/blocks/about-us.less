@@ -1,19 +1,26 @@
 .about-us {
-  margin-bottom: 56px;
+  margin-bottom: 48px;
 }
 
 .about-us__title {
   margin: 0;
-  padding-top: 27px;
+  padding-bottom: 10px;
 }
 
 .about-us__items {
   .items-reset();
+
+  display: flex;
+  flex-direction: column;
+
+  li:nth-child(even) {
+    order: 1;
+  }
 }
 
 .about-us__item {
-  padding-top: 85px;
-  padding-right: 20px;
+  padding-top: 75px;
+  margin-bottom: 8px;
 
   font-size: 17px;
   line-height: 20px;
@@ -23,22 +30,46 @@
 
 @media (min-width: @tablet-widths) {
 
+  .about-us {
+    margin-bottom: 57px;
+  }
+
   .about-us__title {
-    padding-top: 27px;
     padding-bottom: 18px;
   }
 
   .about-us__items {
+    flex-direction: row;
+    flex-wrap: wrap;
 
+    li:nth-child(even) {
+      order: 0;
+    }
   }
 
   .about-us__item {
     padding-top: 85px;
-    padding-right: 35px;
     margin-bottom: 26px;
     width: 50%;
 
     font-size: 20px;
     line-height: 22px;
+  }
+}
+
+@media (min-width: @desktop-widths) {
+
+  .about-us {
+    padding-top: 57px;
+    margin-bottom: 65px;
+  }
+
+  .about-us__title {
+    padding-left: @big-padding;
+  }
+
+  .about-us__items {
+    padding-right: @big-padding;
+    padding-left: @big-padding;
   }
 }
