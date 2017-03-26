@@ -179,29 +179,32 @@
 
   .product-select__fieldset {
     border: none;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 
     legend {
-      margin-bottom: -85px;
+      position: relative;
+      top: 35px;
+      left: 0;
     }
 
     label {
       font-size: @base-font-size-tablet + 2;
     }
+  }
 
-    &--color {
+  .product-select__fieldset--color {
       padding-top: 30px;
-      padding-bottom: 10px;
+      padding-bottom: 12px;
       margin-bottom: 23px;
 
       legend {
-        margin-bottom: -148px;
+        top: 65px;
       }
     }
-  }
 
   .product-select__container {
     padding-left: 167px;
+    padding-top: 15px;
 
     &--color {
       display: flex;
@@ -211,7 +214,7 @@
   }
 
   .product-select__radio {
-    margin-bottom: 56px;
+    margin-bottom: 58px;
     padding-left: 81px;
   }
 
@@ -264,7 +267,7 @@
     }
 
     legend {
-      margin-bottom: -108px;
+      top: 45px;
     }
   }
 
@@ -275,6 +278,8 @@
   }
 
   .product-select__container--buyer-name {
+    padding-top: 11px;
+
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -284,7 +289,7 @@
   .product-select__fieldset input[type="email"],
   .product-select__fieldset textarea {
     margin-left: 167px;
-    width: 500px;
+    width: 496px;
   }
 
   .product-select__fieldset input[type="tel"],
@@ -303,27 +308,31 @@
   }
 
   .product-select__fieldset input[type="tel"] {
-    margin-top: 16px;
-    margin-bottom: 3px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .product-select__fieldset--tel {
+    margin: 0;
   }
 
   .product-select__fieldset--email {
 
     legend {
-      margin-bottom: -60px;
+      top: 40px;
     }
   }
 
   .product-select__fieldset textarea {
-    margin-top: 16px;
-    margin-bottom: 34px;
+    margin-top: 3px;
+    margin-bottom: 35px;
   }
 
   .product-select__submit {
     float: left;
     width: auto;
-    padding-right: 28px;
-    padding-left: 28px;
+    padding-right: 27px;
+    padding-left: 27px;
   }
 }
 
@@ -350,11 +359,12 @@
   .product-select__fieldset input[type="tel"],
   .product-select__fieldset input[type="email"],
   .product-select__fieldset textarea {
-    width: 700px;
+    width: 694px;
+    margin-left: 175px;
   }
 
   .product-select__fieldset textarea {
-    margin-bottom: 28px;
+    margin-bottom: 31px;
   }
 
   .product-select__submit {
@@ -364,5 +374,4 @@
   .product-select__text-bottom {
     margin-right: 175px;
   }
-
 }
