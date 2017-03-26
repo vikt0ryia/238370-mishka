@@ -8,84 +8,114 @@
   </head>
   <body>
 
-    <header class="page-header">
-      <div class="page-header__wrapper">
-        <h1 class="visually-hidden">Мишка: изделия ручной работы на заказ</h1>
-        <div class="page-header__logo">
-          <img src="img/logo.svg" width="370" height="153" alt="Магазин «Мишка»">
-        </div>
-        <nav class="main-nav">
-          <button class="main-nav__toggle main-nav__toggle--close" type="button">Открыть меню</button>
-          <div class="main-nav__wrapper">
-            <ul class="main-nav__items main-nav__items--closed">
-              <li class="main-nav__item"><a href="#">Каталог товаров</a></li>
-              <li class="main-nav__item"><a href="#">Вязание на заказ</a></li>
-              <li class="main-nav__item"><a href="#">Поиск по сайту</a></li>
-              <li class="main-nav__item"><a href="#">Корзина: пока пуста</a></li>
-            </ul>
-          </div>
+    <header class="page-header  page-header--inner-pages">
+        <nav class="main-nav  main-nav--closed  main-nav--nojs">
+          <button class="main-nav__toggle" type="button">Открыть меню</button>
+          <ul class="main-nav__items">
+            <li class="main-nav__item  main-nav__item--logo"><a href="#"><img src="img/logo-mobile.svg" width="86" height="35" alt="Магазин «Мишка»"></a></li>
+            <li class="main-nav__item  main-nav__item--main"><a href="#">Каталог товаров</a></li>
+            <li class="main-nav__item  main-nav__item--main"><a href="#">Вязание на заказ</a></li>
+            <li class="main-nav__item  main-nav__item--search"><a href="#">Поиск по сайту</a></li>
+            <li class="main-nav__item  main-nav__item--cart"><a href="#">Корзина: пока пуста</a></li>
+            <li class="main-nav__item  main-nav__item--additional"><a href="#">Новые поступления</a></li>
+            <li class="main-nav__item  main-nav__item--additional"><a href="#">Распродажа</a></li>
+            <li class="main-nav__item  main-nav__item--shipping">Бесплатная доставка по России</li>
+          </ul>
         </nav>
-      </div>
+        <div class="page-header__title  page-header__title--inner-pages">
+          <h1>Каталог товаров</h1>
+        </div>
     </header>
 
-    <main class="main-content">
-      <div class="page-title">
-        <div class="page-title__wrapper">
-          <h1 class="pages-title__title">Милые штуки ручной работы для дома</h1>
-        </div>
-      </div>
-      <div class="main-content__wrapper">
-        <article class="product-preview">
-          <img class="product-preview__images" src="###" alt="">
-          <h2 class="product-preview__title">Зайчик-попрыгайчик</h2>
-          <p class="product-preview__description">Рост 30см, вес 200г</p>
-          <div class="product-preview__cart-wrapper">
-            <p class="product-preview__price">1200 руб.</p>
-            <a class="product-preview__cart" href="#">Заказать</a>
-          </div>
-        </article>
-        <article class="product-preview">
-          <img class="product-preview__images" src="###" alt="">
-          <h2 class="product-preview__title">Корзинка для белья</h2>
-          <p class="product-preview__description">Диаметр 15 см, высота 10 см</p>
-          <div class="product-preview__cart-wrapper">
-            <p class="product-preview__price">690 руб.</p>
-            <a class="product-preview__cart" href="#">Заказать</a>
-          </div>
-        </article>
-        <article class="product-preview">
-          <img class="product-preview__images" src="###" alt="">
-          <h2 class="product-preview__title">Большая корзина для игрушек</h2>
-          <p class="product-preview__description">Диаметр 30 см, высота 30 см</p>
-          <div class="product-preview__cart-wrapper">
-            <p class="product-preview__price">1500 руб.</p>
-            <a class="product-preview__cart" href="#">Заказать</a>
-          </div>
-        </article>
+    <main class="catalog">
+      <div class="wrapper">
+        <section class="catalog__items">
+          <article class="catalog-item">
+            <a class="catalog-item__image" href="#">
+              <img src="###" alt="">
+            </a>
+            <div class="catalog-item__box">
+              <h3 class="catalog-item__title"><a href="#">Зайчик-попрыгайчик</a></h3>
+              <p class="catalog-item__description">Рост 30см, вес 200г</p>
+              <div class="catalog-item__cart-wrapper">
+                <p class="catalog-item__price">1200 руб.</p>
+                <a class="catalog-item__cart" href="#">Заказать</a>
+              </div>
+            </div>
+          </article>
+          <article class="catalog-item">
+            <a class="catalog-item__image" href="#">
+              <img src="###" alt="">
+            </a>
+            <div class="catalog-item__box">
+              <h3 class="catalog-item__title"><a href="#">Корзинка для белья</a></h3>
+              <p class="catalog-item__description">Диаметр 15 см, высота 10 см</p>
+              <div class="catalog-item__cart-wrapper">
+                <p class="catalog-item__price">690 руб.</p>
+                <a class="catalog-item__cart" href="#">Заказать</a>
+              </div>
+            </div>
+          </article>
+          <article class="catalog-item">
+            <a class="catalog-item__image" href="#">
+              <img src="###" alt="">
+            </a>
+            <div class="catalog-item__box">
+              <h3 class="catalog-item__title"><a href="#">Большая корзина для игрушек</a></h3>
+              <p class="catalog-item__description">Диаметр 30 см, высота 30 см</p>
+              <div class="catalog-item__cart-wrapper">
+                <p class="catalog-item__price">1500 руб.</p>
+                <a class="catalog-item__cart" href="#">Заказать</a>
+              </div>
+            </div>
+          </article>
+        </section>
         <article class="product-video">
-          <h2 class="product-video__title">Процесс производства</h2>
-          <video class="product-video__video" controls preload="metadata" width="400" height="225"></video>
-          <p class="product-video__description">По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
-          <a class="product-video__btn btn" href="#">Заказать</a>
+          <div class="product-video__video">
+            <img controls preload="metadata" width="250" height="150"></img>
+          </div>
+          <h3 class="product-video__title">Процесс производства</h3>
+          <div class="product-video__box">
+            <p class="product-video__description">По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
+            <a class="btn  product-video__btn" href="#">Сделать заказ</a>
+          </div>
         </article>
       </div>
     </main>
 
     <footer class="page-footer">
-      <div class="page-footer__wrapper">
+      <div class="wrapper  page-footer__wrapper">
+        <p class="page-footer__logo"><img src="img/.svg" alt="Магазин «Мишка»" width="258" height="150"></p>
         <p class="page-footer__social">
           <span class="social-links">
-            <a class="social-link social-link--in" href="https://www.instagram.com/htmlacademy">Мы в Инстаграме</a>
-            <a class="social-link social-link--fb" href="https://www.facebook.com/htmlacademy">Мы в Фейсбуке</a>
-            <a class="social-link social-link--tw" href="https://www.twitter.com/htmlacademy">Мы в Твиттере</a>
+            <a class="social-link  social-link--in" href="https://www.instagram.com/htmlacademy">Мы в Инстаграме</a>
+            <a class="social-link  social-link--fb" href="https://www.facebook.com/htmlacademy">Мы в Фейсбуке</a>
+            <a class="social-link  social-link--tw" href="https://www.twitter.com/htmlacademy">Мы в Твиттере</a>
           </span>
         </p>
         <p class="page-footer__copyright">
-          Разработано:
-          <a class="btn page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
+          Разработано
+          <a class="page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
         </p>
       </div>
     </footer>
+
+    <script>
+      var navMain = document.querySelector('.main-nav');
+      var navToggle = document.querySelector('.main-nav__toggle');
+
+      navMain.classList.remove('main-nav--nojs');
+
+      navToggle.addEventListener('click', function() {
+        if (navMain.classList.contains('main-nav--closed')) {
+          navMain.classList.remove('main-nav--closed');
+          navMain.classList.add('main-nav--opened');
+        } else {
+          navMain.classList.add('main-nav--closed');
+          navMain.classList.remove('main-nav--opened');
+        }
+      });
+    </script>
 
   </body>
 </html>

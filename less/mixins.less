@@ -1,21 +1,27 @@
-.wrapper() {
-  width: 300px;
-  margin: 0 auto;
-  padding: 0 30px;
-
-  @media @tablet-widths {
-    width: 640px;
-  }
-
-  @media @desktop-widths {
-    width: 960px;
-  }
-}
-
 .outline-green() {
   outline: 1px solid green;
 }
 
 .outline-orange() {
   outline: 1px solid orange;
+}
+
+.outline-blue() {
+  outline: 1px solid blue;
+}
+
+.items-reset() {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.clearfix() {
+  &::after {
+    content: "";
+
+    display: table;
+    clear: both;
+  }
 }
