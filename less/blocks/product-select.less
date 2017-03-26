@@ -25,67 +25,67 @@
 .form__item-box {
   .wrapper;
 
-  label {
-    font-size: @base-font-size-tablet;
-    line-height: @base-font-size-tablet + 1;
-    color: @black;
-    font-weight: bold;
+  padding-top: 23px;
+
+  &--tel {
+    padding-top: 32px;
+  }
+
+  &--email {
+    padding-top: 33px;
+  }
+
+  &--buyer-comment {
+    padding-top: 33px;
   }
 }
 
-.form__legend {
-  height: 18px;
+.form__item-box label {
+  font-size: @base-font-size-tablet;
+  line-height: @base-font-size-tablet + 1;
+  color: @black;
+  font-weight: bold;
+}
 
+.form__item-box legend {
+  position: relative;
 
-  legend {
-    position: relative;
-    z-index: 2;
-
-    display: inline-block;
-    padding-right: 30px;
-
-    background-color: @white;
-
-    font-size: @base-font-size + 1;
-    line-height: @base-font-size-tablet;
-    color: @color-main;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
+  font-size: @base-font-size + 1;
+  line-height: @base-font-size-tablet;
+  color: @color-main;
+  font-weight: bold;
+  text-transform: uppercase;
 
   &::after {
     content: "";
     position: relative;
     top: -10px;
-    z-index: 1;
+    left: 62px;
 
     display: block;
-
-    border-top: 1px solid @color-main;
+    width: 198px;
+    height: 1px;
+    background-color: @color-main;
   }
 }
 
-
-
-
-
 .form__container {
-  padding-top: 40px;
+  padding-top: 30px;
 
   &--buyer-name {
-    padding-top: 36px;
+    padding-top: 26px;
   }
 
   &--tel {
-    padding-top: 7px;
+    padding-top: 4px;
   }
 
   &--email {
-    padding-top: 7px;
+    padding-top: 4px;
   }
 
   &--buyer-comment {
-    padding-top: 30px;
+    padding-top: 22px;
     padding-bottom: 10px;
   }
 }
@@ -181,16 +181,9 @@
     margin-bottom: 22px;
 
     &:last-child {
-      margin-bottom: 9px;
+      margin-bottom: 0;
     }
   }
-
-
-.form__container input[type="tel"],
-.form__container input[type="email"] {
-  margin-top: 6px;
-  margin-bottom: 12px;
-}
 
 .form__container textarea {
   width: 100% - 4px;
@@ -199,67 +192,80 @@
   resize:none;
 }
 
-
-
-
-
-
-
-/*@media (min-width: @tablet-widths) {
+@media (min-width: @tablet-widths) {
 
   .form__text-top {
-    margin-bottom: 0;
-    padding-bottom: 40px;
     font-size: @base-font-size-tablet;
     line-height: @base-line-height;
   }
 
   .form__text-bottom {
-    margin-top: 10px;
-    margin-bottom: 0;
-
     font-size: @base-font-size-tablet;
     line-height: @base-line-height;
 
     float: right;
   }
 
+  .form__item-box {
+    display: flex;
+    flex-direction: row;
 
-  .form__fieldset {
-    border: none;
-    margin-bottom: 12px;
+  }
 
-    legend {
-      position: relative;
-      top: 35px;
-      left: 0;
-    }
+  .form__item-box legend {
+    flex-basis: 167px;
+    flex-shrink: 0;
+    padding-top: 73px;
 
-    label {
-      font-size: @base-font-size-tablet + 2;
+    &::after {
+      display: none;
     }
   }
 
-  .form__fieldset--color {
-      padding-top: 30px;
-      padding-bottom: 12px;
-      margin-bottom: 23px;
-
-      legend {
-        top: 65px;
-      }
-    }
+  .form__item-box {
+    padding-top: 0;
+  }
 
   .form__container {
-    padding-left: 167px;
-    padding-top: 15px;
+    flex-grow: 1;
+    padding-top: 72px;
+    padding-bottom: 9px;
 
     &--color {
+      padding-top: 64px;
+      padding-bottom: 13px;
+    }
+
+    &--buyer-name {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    &--tel {
+      padding-top: 50px;
+    }
+
+    &--email {
+      padding-top: 15px;
+      padding-bottom: 50px;
+    }
+
+    &--buyer-comment {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+}
+
+  .form__container label {
+    font-size: @base-font-size-tablet + 2;
+  }
+
+  .form__container--color {
       display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
     }
-  }
 
   .form__radio {
     margin-bottom: 58px;
@@ -304,76 +310,35 @@
     height: 34px;
   }
 
-  .form__fieldset--buyer-name {
-    margin-bottom: 27px;
-
-    label {
+  .form__container--buyer-name label {
       display: flex;
       align-items: center;
 
       margin-bottom: 24px;
     }
 
-    legend {
-      top: 45px;
-    }
-  }
-
-  .form__fieldset input[type="text"] {
-    width: auto;
-    margin-left: 30px;
-    flex-grow: 1;
-  }
-
-  .form__container--buyer-name {
-    padding-top: 11px;
-
+.form__container--buyer-name {
     display: flex;
     flex-direction: column;
     align-items: stretch;
   }
 
-  .form__fieldset input[type="tel"],
-  .form__fieldset input[type="email"],
-  .form__fieldset textarea {
-    margin-left: 167px;
-    width: 496px;
+  .form__container input[type="text"] {
+    width: auto;
+    margin-left: 30px;
+    flex-grow: 1;
   }
 
-  .form__fieldset input[type="tel"],
-  .form__fieldset input[type="email"] {
+  .form__container input[type="tel"],
+  .form__container input[type="email"],
+  .form__container textarea {
+    width: 100%;
+  }
+
+  .form__item--color,
+  .form__item--tel,
+  .form__item--email {
     background-color: @footer-bg-color;
-  }
-
-  .form__box {
-    background-color: @footer-bg-color;
-
-    &--contacts {
-      padding-top: 33px;
-      padding-bottom: 25px;
-      margin-bottom: 31px;
-    }
-  }
-
-  .form__fieldset input[type="tel"] {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  .form__fieldset--tel {
-    margin: 0;
-  }
-
-  .form__fieldset--email {
-
-    legend {
-      top: 40px;
-    }
-  }
-
-  .form__fieldset textarea {
-    margin-top: 3px;
-    margin-bottom: 35px;
   }
 
   .form__submit {
@@ -386,8 +351,11 @@
 
 @media (min-width: @desktop-widths) {
 
+  .form__item-box legend {
+    flex-basis: 175px;
+  }
+
   .form__container {
-    padding-left: 175px;
     padding-right: 175px;
 
     &--color {
@@ -404,17 +372,6 @@
     padding-left: 65px;
   }
 
-  .form__fieldset input[type="tel"],
-  .form__fieldset input[type="email"],
-  .form__fieldset textarea {
-    width: 694px;
-    margin-left: 175px;
-  }
-
-  .form__fieldset textarea {
-    margin-bottom: 31px;
-  }
-
   .form__submit {
     margin-left: 175px;
   }
@@ -423,4 +380,3 @@
     margin-right: 175px;
   }
 }
-*/
