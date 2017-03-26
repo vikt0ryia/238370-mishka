@@ -1,14 +1,14 @@
-.product-select__text-top {
+.form__text-top {
   margin: 0;
 
   color: @text-color;
-  margin-bottom: 24px;
+  padding-bottom: 1px;
   font-size: @font-size-small;
   line-height: @line-height;
 }
 
-.product-select__text-bottom {
-  margin-top: -10px;
+.form__text-bottom {
+  margin: 0;
   margin-bottom: 30px;
 
   font-size: @font-size-small + 1;
@@ -16,25 +16,14 @@
   color: @text-color;
 }
 
-.product-select__fieldset {
+.form__item {
   padding: 0;
   margin: 0;
-  margin-bottom: 20px;
   border: none;
-  border-top: 1px solid @color-main;
+}
 
-  &--color {
-    margin-bottom: 0;
-  }
-
-  legend {
-    padding-right: 30px;
-    font-size: @base-font-size + 1;
-    line-height: @base-font-size-tablet;
-    color: @color-main;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
+.form__item-box {
+  .wrapper;
 
   label {
     font-size: @base-font-size-tablet;
@@ -44,15 +33,64 @@
   }
 }
 
-.product-select__container {
-  padding-top: 33px;
+.form__legend {
+  height: 18px;
 
-  &--buyer-name {
-    padding-top: 29px;
+
+  legend {
+    position: relative;
+    z-index: 2;
+
+    display: inline-block;
+    padding-right: 30px;
+
+    background-color: @white;
+
+    font-size: @base-font-size + 1;
+    line-height: @base-font-size-tablet;
+    color: @color-main;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &::after {
+    content: "";
+    position: relative;
+    top: -10px;
+    z-index: 1;
+
+    display: block;
+
+    border-top: 1px solid @color-main;
   }
 }
 
-.product-select__radio {
+
+
+
+
+.form__container {
+  padding-top: 40px;
+
+  &--buyer-name {
+    padding-top: 36px;
+  }
+
+  &--tel {
+    padding-top: 7px;
+  }
+
+  &--email {
+    padding-top: 7px;
+  }
+
+  &--buyer-comment {
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+}
+
+.form__radio {
   margin-bottom: 24px;
   padding-left: 63px;
 
@@ -65,7 +103,7 @@
   }
 }
 
-.product-select__radio input[type="radio"] + .product-select__radio-indicator {
+.form__radio input[type="radio"] + .form__radio-indicator {
   position: absolute;
   top: -8px;
   left: 0;
@@ -77,7 +115,7 @@
   border-radius: 50%;
 }
 
-.product-select__radio input[type="radio"]:checked + .product-select__radio-indicator::before {
+.form__radio input[type="radio"]:checked + .form__radio-indicator::before {
   content: "";
   position: absolute;
   top: 9px;
@@ -89,7 +127,7 @@
   border-radius: 50%;
 }
 
-.product-select__checkbox {
+.form__checkbox {
   margin-bottom: 43px;
   padding-left: 63px;
 
@@ -102,7 +140,11 @@
   }
 }
 
-.product-select__checkbox input[type="checkbox"] + .product-select__checkbox-indicator {
+.form__container--color label:last-child {
+  margin-bottom: 22px;
+}
+
+.form__checkbox input[type="checkbox"] + .form__checkbox-indicator {
   position: absolute;
   top: -8px;
   left: 0;
@@ -113,7 +155,7 @@
   border: 2px solid @black;
 }
 
-.product-select__checkbox input[type="checkbox"]:checked + .product-select__checkbox-indicator::before {
+.form__checkbox input[type="checkbox"]:checked + .form__checkbox-indicator::before {
   content: "";
   position: absolute;
   top: 6px;
@@ -125,48 +167,54 @@
   background-size: contain;
 }
 
-.product-select__fieldset input[type="text"],
-.product-select__fieldset input[type="tel"],
-.product-select__fieldset input[type="email"] {
+.form__container input[type="text"],
+.form__container input[type="tel"],
+.form__container input[type="email"] {
   width: 100%;
   height: 48px;
   border: none;
   border-bottom: 2px solid @black;
 }
 
-.product-select__fieldset--buyer-name {
-  margin-bottom: 9px;
-
-  label {
+.form__container--buyer-name label {
     display: block;
     margin-bottom: 22px;
-  }
-}
 
-.product-select__fieldset input[type="tel"],
-.product-select__fieldset input[type="email"] {
+    &:last-child {
+      margin-bottom: 9px;
+    }
+  }
+
+
+.form__container input[type="tel"],
+.form__container input[type="email"] {
   margin-top: 6px;
   margin-bottom: 12px;
 }
 
-.product-select__fieldset textarea {
-  margin-top: 24px;
-  width: 100%;
+.form__container textarea {
+  width: 100% - 4px;
   height: 138px;
   border: 2px solid @black;
   resize:none;
 }
 
-@media (min-width: @tablet-widths) {
 
-  .product-select__text-top {
+
+
+
+
+
+/*@media (min-width: @tablet-widths) {
+
+  .form__text-top {
     margin-bottom: 0;
     padding-bottom: 40px;
     font-size: @base-font-size-tablet;
     line-height: @base-line-height;
   }
 
-  .product-select__text-bottom {
+  .form__text-bottom {
     margin-top: 10px;
     margin-bottom: 0;
 
@@ -177,7 +225,7 @@
   }
 
 
-  .product-select__fieldset {
+  .form__fieldset {
     border: none;
     margin-bottom: 12px;
 
@@ -192,7 +240,7 @@
     }
   }
 
-  .product-select__fieldset--color {
+  .form__fieldset--color {
       padding-top: 30px;
       padding-bottom: 12px;
       margin-bottom: 23px;
@@ -202,7 +250,7 @@
       }
     }
 
-  .product-select__container {
+  .form__container {
     padding-left: 167px;
     padding-top: 15px;
 
@@ -213,12 +261,12 @@
     }
   }
 
-  .product-select__radio {
+  .form__radio {
     margin-bottom: 58px;
     padding-left: 81px;
   }
 
-  .product-select__radio input[type="radio"] + .product-select__radio-indicator {
+  .form__radio input[type="radio"] + .form__radio-indicator {
     top: -16px;
     left: 0;
 
@@ -226,21 +274,21 @@
     height: 48px;
   }
 
-  .product-select__radio input[type="radio"]:checked + .product-select__radio-indicator::before {
+  .form__radio input[type="radio"]:checked + .form__radio-indicator::before {
     top: 14px;
     left: 14px;
 
     border: 10px solid @color-main;
   }
 
-  .product-select__checkbox {
+  .form__checkbox {
     width: 240px;
     box-sizing: border-box;
     margin-bottom: 58px;
     padding-left: 81px;
   }
 
-  .product-select__checkbox input[type="checkbox"] + .product-select__checkbox-indicator {
+  .form__checkbox input[type="checkbox"] + .form__checkbox-indicator {
     top: -13px;
     left: 0;
 
@@ -248,7 +296,7 @@
     height: 48px;
   }
 
-  .product-select__checkbox input[type="checkbox"]:checked + .product-select__checkbox-indicator::before {
+  .form__checkbox input[type="checkbox"]:checked + .form__checkbox-indicator::before {
     top: 8px;
     left: 8px;
 
@@ -256,7 +304,7 @@
     height: 34px;
   }
 
-  .product-select__fieldset--buyer-name {
+  .form__fieldset--buyer-name {
     margin-bottom: 27px;
 
     label {
@@ -271,13 +319,13 @@
     }
   }
 
-  .product-select__fieldset input[type="text"] {
+  .form__fieldset input[type="text"] {
     width: auto;
     margin-left: 30px;
     flex-grow: 1;
   }
 
-  .product-select__container--buyer-name {
+  .form__container--buyer-name {
     padding-top: 11px;
 
     display: flex;
@@ -285,19 +333,19 @@
     align-items: stretch;
   }
 
-  .product-select__fieldset input[type="tel"],
-  .product-select__fieldset input[type="email"],
-  .product-select__fieldset textarea {
+  .form__fieldset input[type="tel"],
+  .form__fieldset input[type="email"],
+  .form__fieldset textarea {
     margin-left: 167px;
     width: 496px;
   }
 
-  .product-select__fieldset input[type="tel"],
-  .product-select__fieldset input[type="email"] {
+  .form__fieldset input[type="tel"],
+  .form__fieldset input[type="email"] {
     background-color: @footer-bg-color;
   }
 
-  .product-select__box {
+  .form__box {
     background-color: @footer-bg-color;
 
     &--contacts {
@@ -307,28 +355,28 @@
     }
   }
 
-  .product-select__fieldset input[type="tel"] {
+  .form__fieldset input[type="tel"] {
     margin-top: 0px;
     margin-bottom: 0px;
   }
 
-  .product-select__fieldset--tel {
+  .form__fieldset--tel {
     margin: 0;
   }
 
-  .product-select__fieldset--email {
+  .form__fieldset--email {
 
     legend {
       top: 40px;
     }
   }
 
-  .product-select__fieldset textarea {
+  .form__fieldset textarea {
     margin-top: 3px;
     margin-bottom: 35px;
   }
 
-  .product-select__submit {
+  .form__submit {
     float: left;
     width: auto;
     padding-right: 27px;
@@ -338,7 +386,7 @@
 
 @media (min-width: @desktop-widths) {
 
-  .product-select__container {
+  .form__container {
     padding-left: 175px;
     padding-right: 175px;
 
@@ -347,31 +395,32 @@
     }
   }
 
-  .product-select__text-top {
+  .form__text-top {
     padding-left: 175px;
     padding-right: 185px;
   }
 
-  .product-select__fieldset legend {
+  .form__fieldset legend {
     padding-left: 65px;
   }
 
-  .product-select__fieldset input[type="tel"],
-  .product-select__fieldset input[type="email"],
-  .product-select__fieldset textarea {
+  .form__fieldset input[type="tel"],
+  .form__fieldset input[type="email"],
+  .form__fieldset textarea {
     width: 694px;
     margin-left: 175px;
   }
 
-  .product-select__fieldset textarea {
+  .form__fieldset textarea {
     margin-bottom: 31px;
   }
 
-  .product-select__submit {
+  .form__submit {
     margin-left: 175px;
   }
 
-  .product-select__text-bottom {
+  .form__text-bottom {
     margin-right: 175px;
   }
 }
+*/
