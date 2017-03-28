@@ -29,9 +29,31 @@
 }
 
 .product-video__video {
-  width: 100%;
+  display: flex;
+
+  width: 260px;
   height: 150px;
-  background-color: yellow;
+
+  background-image: url("../img/video-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media @retina {
+    background-image: url("../img/video-mobile@2x.jpg");
+    background-size: 260px auto;
+  }
+}
+
+.product-video__play {
+  margin: auto;
+  width: 101px;
+  height: 77px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/icon-play.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .product-video__description {
@@ -56,7 +78,17 @@
   }
 
   .product-video__video {
-    height: 453px;
+    width: 100%;
+    height: 455px;
+
+    background-image: url("../img/video-tablet@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media @retina {
+      background-image: url("../img/video-tablet@2x.jpg");
+      background-size: 668px auto;
+    }
   }
 
   .product-video__title {
@@ -92,8 +124,17 @@
 
   .product-video__video {
     float: left;
-    width: 680px;
-    height: 456px;
+    width: 682px;
+    height: 455px;
+
+    background-image: url("../img/video-desktop@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media @retina {
+      background-image: url("../img/video-desktop@2x.jpg");
+      background-size: 682px auto;
+    }
   }
 
   .product-video__title {
