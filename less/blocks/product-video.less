@@ -10,6 +10,22 @@
   margin-top: 23px;
   margin-bottom: 24px;
   order: -1;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 22px;
+
+    top: 10px;
+    left: 33px;
+
+    background-image: url("../img/icon-video.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .product-video__video {
@@ -47,6 +63,11 @@
     padding-left: 106px;
     margin-top: 40px;
     margin-bottom: 32px;
+
+    &::before {
+      top: -2px;
+      left: 40px;
+    }
   }
 
    .product-video__box {
@@ -82,6 +103,11 @@
     padding-left: 78px;
     padding-right: 107px;
     padding-top: 95px;
+
+    &::before {
+      top: 45px;
+      left: 80px;
+    }
   }
 
   .product-video__box {

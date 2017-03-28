@@ -22,20 +22,14 @@
 
   font-size: 0;
 
-  background-color: #f4f4f4; /* временно */
+  background-color: @white;
+  background-image: url("../img/icon-menu-open.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+
   cursor: pointer;
-
   border: none;
-
-/*
-  &:hover {
-    background-color: #;
-  }
-
-  &:active {
-    background-color: #;
-
-  } */
 }
 
 .main-nav__items {
@@ -49,7 +43,7 @@
 .main-nav__item a {
   display: block;
   padding: 27px;
-  padding-left: 45px;
+  padding-left: 75px;
   margin-top: -1px;
 
   font-size: 17px;
@@ -63,28 +57,47 @@
 }
 
 .main-nav__item--logo a {
-  margin: 0;
   padding: 0;
-  height: 58px;
-  text-align: center;
-  padding-top: 20px;
-}
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-/*
-.main-nav__item a[href] {
-  &:hover {
-    background-color: #;
-    border-top-color: #;
-  }
-
-  &:active {
-    color: rgba(255, 255, 255, 0.3);
-
-    background-color: #;
-    border-top-color: #;
+  img {
+    width: 86px;
   }
 }
- */
+
+.main-nav__item--search a,
+.main-nav__item--cart a {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+
+    top: 27px;
+    left: 27px;
+
+    background-size: 20px;
+    background-position: center;
+    opacity: 0.2;
+  }
+}
+
+.main-nav__item--cart a::before {
+  background-image: url("../img/icon-cart.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.main-nav__item--search a::before {
+  background-image: url("../img/icon-search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .main-nav__item--additional,
 .main-nav__item--shipping {
@@ -109,6 +122,11 @@
 
   .main-nav--nojs .main-nav__toggle {
     display: none;
+  }
+
+  .main-nav--opened .main-nav__toggle {
+    background-image: url("../img/icon-menu-close.svg");
+    border-bottom: 1px solid #ececec;
   }
 
   .main-nav--nojs .main-nav__items {
@@ -138,7 +156,10 @@
 
   .main-nav__items {
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    flex-shrink: 0;
   }
 
   .main-nav__item a {
@@ -148,7 +169,7 @@
 
   .main-nav__item--main,
   .main-nav__item--additional {
-    padding-left: 50px;
+    margin-left: 50px;
     order: 1;
   }
 
@@ -164,31 +185,44 @@
     font-weight: normal;
   }
 
-  .main-nav__item--logo a,
   .main-nav__item--search a,
   .main-nav__item--cart a {
     height: 88px;
-    padding: 0 50px;
+    padding: 0;
     margin: 0;
     border-bottom: 1px solid #ececec;
     background-color: #ffffff;
   }
 
-  .main-nav__item--logo a {
-    padding: 0 70px;
-  }
-
   .main-nav__item--cart a {
     line-height: 88px;
     border-left: 1px solid #ececec;
-    padding-left: 82px;
+    padding-left: 93px;
+    margin-right: 50px;
   }
 
   .main-nav__item--search a {
-    width: 80px;
-    padding: 0;
+    padding-left: 82px;
     border-left: 1px solid #ececec;
     font-size: 0;
+    margin-left: 100px;
+  }
+
+  .main-nav__item--logo {
+    flex-grow: 1;
+  }
+
+  .main-nav__item--logo a {
+    justify-content: flex-start;
+
+    height: 88px;
+    padding: 0 50px;
+    padding-top: 9px;
+    box-sizing: border-box;
+
+    img {
+      width: 113px;
+    }
   }
 
   .main-nav__item--main a,
@@ -198,9 +232,14 @@
     padding: 18px 0;
   }
 
-  .main-nav__item--logo {
-    flex-grow: 1;
-    background-color: @white;
+
+  .main-nav__item--search a,
+  .main-nav__item--cart a {
+
+    &::before {
+      top: 32px;
+      left: 27px;
+    }
   }
 }
 
@@ -210,8 +249,14 @@
     width: @desktop-widths;
   }
 
+  .main-nav__items {
+    flex-shrink: 0;
+  }
+
   .main-nav__item--additional {
     display: block;
+    margin-right: 20px;
+    margin-left: 50px;
   }
 
   .main-nav__item--main {
@@ -219,10 +264,18 @@
     order: -1;
   }
 
+  .main-nav__item--main {
+    margin: 0;
+  }
+
   .main-nav__item--main a {
     height: 88px;
-    padding: 0 50px;
+
+    padding: 0;
+    padding: 0 35px;
     margin: 0;
+    margin-right: 50px;
+
     border-bottom: 1px solid #ececec;
     border-left: 1px solid #ececec;
     background-color: #ffffff;
@@ -232,9 +285,24 @@
 
   .main-nav__items li:nth-child(2) a {
     border-left: none;
+    margin-right: 0;
+    margin-left: 50px;
+    padding-right: 45px;
+    padding-left: 0;
   }
 
-  .main-nav__item--additional {
-    padding-right: 50px;
+  .main-nav__item--logo a {
+    justify-content: flex-start;
+
+    padding: 0;
+    padding-top: 10px;
+
+    img {
+      width: 149px;
+    }
+  }
+
+  .main-nav__item--search a {
+    margin-left: 50px;
   }
 }

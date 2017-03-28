@@ -1,20 +1,26 @@
-.nav-items {
+.nav {
+  background-color: @title-bg-color;
+}
+
+.nav__items {
   .items-reset();
   width: 320px;
   margin: 0 auto;
   margin-bottom: 28px;
 }
 
-.nav-items__item {
+.nav__item {
 
   a {
     display: block;
     width: 100%;
-    padding-top: 27px;
-    padding-bottom: 27px;
+    padding-top: 26px;
+    padding-bottom: 29px;
     padding-left: 30px;
     padding-right: 160px;
     box-sizing: border-box;
+
+    position: relative;
 
     font-size: 19px;
     line-height: 24px;
@@ -22,42 +28,122 @@
     color: @white;
     text-decoration: none;
 
+    &::before {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 100px;
+
+
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.5;
+    }
+  }
+
+  &--interior a {
     background-color: @color-main;
+
+    &::before {
+      top: 5px;
+      right: 2px;
+
+      background-image: url("../img/icon-interior.svg");
+      background-size: 40px;
+    }
   }
 
   &--toy a {
     background: @color-main--dark;
-  }
 
+    &::before {
+      top: 2px;
+      right: 2px;
+
+      background-image: url("../img/icon-toy.svg");
+      background-size: 60px;
+    }
+  }
 }
 
 @media (min-width: @tablet-widths) {
 
-  .nav-items {
-    .wrapper;
-    display: flex;
-    margin-bottom: 45px;
+  .nav {
+    position: relative;
+    order: 1;
+
+    padding-bottom: 10px;
+    margin-bottom: 35px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      order: 2;
+
+      height: 30px;
+      width: 100%;
+      bottom: 0;
+
+      background-image: url("../img/bg-zigzag-fill.svg");
+      background-size: contain;
+      background-repeat: repeat-x;
+      background-position: bottom;
+    }
   }
 
-  .nav-items__item {
+  .nav__items {
+    .wrapper;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  .nav__item {
     width: 50%;
 
     a {
       padding-top: 30px;
       padding-bottom: 30px;
-      padding-left: 50px;
+      padding-left: 35px;
       padding-right: 165px;
 
       font-size: 20px;
       line-height: 30px;
     }
 
-  }
+    &--interior a::before {
+      top: 10px;
+      right: 2px;
+    }
 
+    &--toy a::before {
+      top: 12px;
+      right: 8px;
+    }
+  }
 }
 
 @media (min-width: @desktop-widths) {
-  .nav-items__item a {
+
+  .nav {
+
+
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+
+    &::after {
+
+      height: 40px;
+      width: 100%;
+      bottom: 0;
+
+      background-size: contain;
+      background-repeat: repeat-x;
+      background-position: bottom;
+    }
+  }
+
+  .nav__item a {
     padding-right: 350px;
   }
 }
