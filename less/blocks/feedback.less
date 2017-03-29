@@ -1,5 +1,22 @@
 .feedback {
+  position: relative;
+  order: 1;
+
   padding-bottom: 51px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    order: 2;
+    height: 7px;
+    width: 100%;
+    bottom: 0;
+
+    background-image: url("../img/bg-zigzag-line.svg");
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position: bottom;
+  }
 }
 
 .feedback__title {
@@ -36,28 +53,55 @@
 .feedback__btn {
   margin-bottom: 38px;
   width: 100%;
+
   display: flex;
   flex-direction: row;
 
   button {
     width: 50%;
     height: 52px;
+
     font-size: 0;
+
     background-color: @white;
     border: 1px solid @border-color;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
+.feedback__prev {
+  background-image: url("../img/icon-left-arrow.svg");
+}
+
+.feedback__next {
+  background-image: url("../img/icon-right-arrow.svg");
+}
+
 @media (min-width: @tablet-widths) {
+
   .feedback {
-    padding-bottom: 86px;
+    padding-bottom: 83px;
+
+    &::after {
+      height: 17px;
+    }
 
     &__wrapper {
       padding-top: 78px;
+
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-start;
+
+      background-image: url("../img/review@1x.jpg");
+      background-repeat: no-repeat;
+      background-position: 0 center;
+
+      @media @retina {
+        background-image: url("../img/review@2x.jpg");
+      }
     }
   }
 
@@ -90,11 +134,12 @@
 @media (min-width: @desktop-widths) {
 
   .feedback {
-    padding-bottom: 93px;
+    padding-bottom: 90px;
 
     &__wrapper {
       padding-top: 70px;
       padding-bottom: 48px;
+      background-position: 50px center;
     }
   }
 

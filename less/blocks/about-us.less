@@ -26,7 +26,25 @@
   line-height: 20px;
   font-weight: bold;
   color: @black;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    order: 2;
+    height: 50px;
+    width: 55px;
+    top: 12px;
+    left: -3px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
 }
+
+.icon-for-about-us(6);
 
 @media (min-width: @tablet-widths) {
 
@@ -55,12 +73,17 @@
     font-size: 20px;
     line-height: 22px;
   }
+
+  .about-us__item::after {
+    top: 22px;
+    left: -3px;
+  }
+
 }
 
 @media (min-width: @desktop-widths) {
 
   .about-us {
-    padding-top: 57px;
     margin-bottom: 65px;
   }
 
