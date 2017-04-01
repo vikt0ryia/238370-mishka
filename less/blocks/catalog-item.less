@@ -16,15 +16,32 @@
 
 .catalog-item__box {
   padding: 0 27px;
+
+  &:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .catalog-item__title {
-  margin-top: 26px;
-  margin-bottom: 5px;
+  margin: 0;
+  padding-top: 26px;
+  padding-bottom: 5px;
 
   a {
     text-decoration: none;
     color: @black;
+
+    &:hover {
+      color: rgba( 0, 0, 0, 0.6);
+    }
+
+    &:active {
+      color: rgba( 0, 0, 0, 0.3);
+    }
   }
 }
 
@@ -59,8 +76,21 @@
   height: 20px;
   margin-bottom: 6px;
   font-size: 0;
-  background: url("../img/icon-cart.svg") no-repeat center;
   opacity: 0.2;
+
+  &:hover {
+
+    svg path {
+      fill: @color-main;
+    }
+  }
+
+  &:active {
+
+    svg path {
+      opacity: 0.3;
+    }
+  }
 }
 
 @media (min-width: @tablet-widths) {

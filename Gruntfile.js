@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     less: {
       style: {
         files: {
-          "build/css/style.css": "less/style.less"
+          "build/css/style.css": ["less/style.less"]
         }
       }
     },
@@ -104,17 +104,13 @@ module.exports = function(grunt) {
       server: {
         bsFiles: {
           src: [
-            "*.html",
-            "css/*.css"
+            "build/*.html",
+            "build/css/*.css"
           ]
         },
         options: {
           server: "build/",
-          watchTask: true,
-          notify: false,
-          open: true,
-          cors: true,
-          ui: false
+          watchTask: true
         }
       }
     },

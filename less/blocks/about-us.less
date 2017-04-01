@@ -28,23 +28,15 @@
   color: @black;
 
   position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    order: 2;
-    height: 50px;
-    width: 55px;
-    top: 12px;
-    left: -3px;
-
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
 }
 
-.icon-for-about-us(6);
+.about-us__icon-feature {
+  position: absolute;
+  top: 21px;
+  left: 5px;
+
+  fill: @color-main;
+}
 
 @media (min-width: @tablet-widths) {
 
@@ -74,11 +66,10 @@
     line-height: 22px;
   }
 
-  .about-us__item::after {
-    top: 22px;
-    left: -3px;
+  .about-us__icon-feature {
+    top: 32px;
+    left: 3px;
   }
-
 }
 
 @media (min-width: @desktop-widths) {

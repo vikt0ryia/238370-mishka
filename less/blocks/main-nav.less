@@ -54,6 +54,29 @@
   background-color: @white;
   border-top: 1px solid #ececec;
   border-bottom: 1px solid #ececec;
+
+  &:hover {
+    color: rgba( 0, 0, 0, 0.6);
+
+    .main-nav__icon-search,
+    .main-nav__icon-cart {
+      path {
+        fill: @color-main;
+      }
+    }
+  }
+
+  &:active {
+    color: rgba( 0, 0, 0, 0.3);
+
+    .main-nav__icon-search,
+    .main-nav__icon-cart {
+      path {
+        fill: @color-main;
+        opacity: 0.3;
+      }
+    }
+  }
 }
 
 .main-nav__item--logo a {
@@ -68,35 +91,46 @@
   }
 }
 
-.main-nav__item--search a,
-.main-nav__item--cart a {
-  position: relative;
+.main-nav__item--logo a[href] {
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 25px;
+  &:hover {
 
-    top: 27px;
-    left: 27px;
+    img {
+      opacity: 0.6;
+    }
+  }
 
-    background-size: 20px;
-    background-position: center;
-    opacity: 0.2;
+  &:active {
+
+    img {
+      opacity: 0.3;
+    }
   }
 }
 
-.main-nav__item--cart a::before {
-  background-image: url("../img/icon-cart.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+.main-nav__item--search a,
+.main-nav__item--cart a {
+  position: relative;
 }
 
-.main-nav__item--search a::before {
-  background-image: url("../img/icon-search.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+.main-nav__icon-search {
+  position: absolute;
+  width: 17.6px;
+  height: 17.6px;
+
+  top: 30px;
+  left: 30px;
+  opacity: 0.2;
+}
+
+.main-nav__icon-cart {
+  position: absolute;
+  width: 20.294px;
+  height: 18.849px;
+
+  top: 30px;
+  left: 30px;
+  opacity: 0.2;
 }
 
 .main-nav__item--additional,
@@ -232,14 +266,14 @@
     padding: 18px 0;
   }
 
+  .main-nav__icon-search {
+    top: 37px;
+    left: 31px;
+  }
 
-  .main-nav__item--search a,
-  .main-nav__item--cart a {
-
-    &::before {
-      top: 32px;
-      left: 27px;
-    }
+  .main-nav__icon-cart {
+    top: 34px;
+    left: 30px;
   }
 }
 

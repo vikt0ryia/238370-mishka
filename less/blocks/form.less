@@ -113,6 +113,14 @@
 
   border: 2px solid @black;
   border-radius: 50%;
+
+  &:hover {
+    border-color: @color-main;
+  }
+
+  &:active {
+    border-color: rgba( 0, 0, 0, 0.3);
+  }
 }
 
 .form__radio input[type="radio"]:checked + .form__radio-indicator::before {
@@ -153,6 +161,14 @@
   height: 34px;
 
   border: 2px solid @black;
+
+  &:hover {
+    border-color: @color-main;
+  }
+
+  &:active {
+    border-color: rgba( 0, 0, 0, 0.3);
+  }
 }
 
 .form__checkbox input[type="checkbox"]:checked + .form__checkbox-indicator::before {
@@ -180,18 +196,34 @@
   line-height: @base-font-size-tablet + 1;
   font-weight: normal;
   color: @black;
+
+  &:hover {
+    border-color: @color-main;
+  }
+
+  &:active, &:focus {
+    border-bottom: 1px solid @color-main;
+  }
 }
 
 .form__container input[type="tel"] {
   background-image: url("../img/icon-phone.svg");
   background-repeat: no-repeat;
   background-position: right 8px top 10px;
+
+  &:hover, &:active, &:focus {
+    background-image: url("../img/icon-phone-green.svg");
+  }
 }
 
 .form__container input[type="email"] {
   background-image: url("../img/icon-mail.svg");
   background-repeat: no-repeat;
   background-position: right 2px top 10px;
+
+  &:hover, &:active, &:focus {
+    background-image: url("../img/icon-mail-green.svg");
+  }
 }
 
 .form__container--buyer-name label {
@@ -202,6 +234,11 @@
       margin-bottom: 0;
     }
   }
+
+  ::-webkit-input-placeholder { color: rgba( 68, 68, 68, 0.3); }
+  ::-moz-placeholder          { color: rgba( 68, 68, 68, 0.3); }/* Firefox 19+ */
+  :-moz-placeholder           { color: rgba( 68, 68, 68, 0.3); }/* Firefox 18- */
+  :-ms-input-placeholder      { color: rgba( 68, 68, 68, 0.3); }
 
 .form__container textarea {
   width: 100%;
@@ -215,6 +252,10 @@
   line-height: @base-font-size-tablet + 1;
   font-weight: normal;
   color: @black;
+
+  &:hover, &:active, &:focus {
+    border-color: @color-main;
+  }
 }
 
 @media (min-width: @tablet-widths) {
@@ -235,7 +276,6 @@
   .form__item-box {
     display: flex;
     flex-direction: row;
-
   }
 
   .form__item-box legend {
@@ -394,7 +434,6 @@
   .form__container input[type="email"] {
     background-position: right 22px top 8px;
   }
-
 }
 
 @media (min-width: @desktop-widths) {

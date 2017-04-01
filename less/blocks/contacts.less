@@ -17,6 +17,16 @@
     color: @text-color;
     padding-bottom: 5px;
     border-bottom: 1px solid #62d1ba;
+
+    &:hover {
+      color: #46c1ae;
+      border-color: #46c1ae;
+    }
+
+    &:active {
+      color: rgba( 70, 193, 174, 0.3);
+      border-color: rgba( 70, 193, 174, 0.3);
+    }
   }
 
   td {
@@ -64,20 +74,12 @@
     line-height: @title-line-height-tablet;
 
     position: relative;
+  }
 
-    &::after {
-      content: "";
-      position: absolute;
-
-      height: 81px;
-      width: 47px;
-      top: 46px;
-      right: 0;
-
-      background-image: url("../img/icon-flag.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-    }
+  .contacts__icon {
+    position: absolute;
+    top: 46px;
+    right: 3px;
   }
 
   .contacts__table {
@@ -142,11 +144,11 @@
 
     font-size: @title-font-size-desktop;
     line-height: @title-line-height-desktop;
+  }
 
-    &::after {
-      top: 130px;
-      left: 60px;
-    }
+  .contacts__icon {
+    top: 130px;
+    left: 60px;
   }
 
   .contacts__table {

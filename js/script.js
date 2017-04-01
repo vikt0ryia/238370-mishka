@@ -12,3 +12,31 @@ navToggle.addEventListener('click', function() {
     navMain.classList.remove('main-nav--opened');
   }
 });
+
+var buy = document.querySelector('.product__cart');
+var cart = document.querySelector('.catalog-item__cart');
+var popup = document.querySelector('.modal');
+var close = popup.querySelector('.modal__overlay');
+
+buy.addEventListener("click", function(event) {
+  event.preventDefault();
+  popup.classList.add("modal--show");
+});
+
+cart.addEventListener("click", function(event) {
+  event.preventDefault();
+  popup.classList.add("modal--show");
+});
+
+close.addEventListener("click", function(event) {
+  event.preventDefault();
+  popup.classList.remove("modal--show");
+});
+
+window.addEventListener("keydown", function(event) {
+  if (event.keyCode === 27) {
+    if (popup.classList.contains("modal--show")) {
+      popup.classList.remove("modal--show");
+    }
+  }
+});
