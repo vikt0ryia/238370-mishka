@@ -14,16 +14,10 @@ navToggle.addEventListener('click', function() {
 });
 
 var buy = document.querySelector('.product__cart');
-var cart = document.querySelector('.catalog-item__cart');
 var popup = document.querySelector('.modal');
 var close = popup.querySelector('.modal__overlay');
 
 buy.addEventListener("click", function(event) {
-  event.preventDefault();
-  popup.classList.add("modal--show");
-});
-
-cart.addEventListener("click", function(event) {
   event.preventDefault();
   popup.classList.add("modal--show");
 });
