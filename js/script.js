@@ -13,7 +13,7 @@ navToggle.addEventListener('click', function() {
   }
 });
 
-var buy = document.querySelector('.product__cart');
+var buy = document.querySelector('.open-modal');
 var popup = document.querySelector('.modal');
 var close = popup.querySelector('.modal__overlay');
 
