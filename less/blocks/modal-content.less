@@ -1,9 +1,14 @@
 .modal {
-  display: none;
+    display: none;
+
+  &--show {
+    display: block;
+  }
 }
 
 .modal__overlay {
   position: fixed;
+  order: 1000;
   overflow: auto;
   left: 0;
   top: 0;
@@ -55,6 +60,8 @@
     display: none;
   }
 
+
+
   input[type="radio"]:checked + label {
     border-color: @color-main;
   }
@@ -64,12 +71,25 @@
   cursor: pointer;
   border-color: @border-color;
   width: 32%;
+
+  &:hover {
+    border-color: rgba( 68, 68, 68, 0.3);
+    background-color: @white;
+    color: @text-color;
+  }
+
+  &:active {
+    border-color: @color-main;
+  }
 }
 
 .modal__btn {
   color: @white;
   background-color: @color-main;
   border: none;
+  &:hover {
+    background-color: @color-main;
+  }
 }
 
 @media (min-width: @tablet-widths) {

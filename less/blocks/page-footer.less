@@ -8,9 +8,8 @@
 }
 
 .page-footer__social {
-  padding: 10px 40px;
+  padding: 25px 55px;
   border-bottom: 1px solid #e5e5e5;
-
   margin: 0;
 }
 
@@ -21,8 +20,6 @@
 
   min-height: 80px;
   margin: 0;
-  /*padding-left: 40px;
-  padding-right: 20px;*/
 
   font-size: 19px;
   line-height: 18px;
@@ -33,11 +30,25 @@
 .page-footer__copyright-link {
   .social-link;
 
-  width: 27px;
-  height: 34px;
   margin-left: 30px;
 
-  background-image: url("../img/logo-htmlacademy.svg");
+  svg {
+    fill: @color-main;
+  }
+
+  &:hover {
+
+    svg {
+      fill: #46c1ae;
+    }
+  }
+
+  &:active {
+
+    svg {
+      opacity: 0.3;
+    }
+  }
 }
 
 @media (min-width: @tablet-widths) {
@@ -58,6 +69,20 @@
 
   .page-footer__logo {
     display: block;
+
+    &:hover {
+
+      svg {
+        fill: #46c1ae;
+      }
+    }
+
+    &:active {
+
+      svg {
+        opacity: 0.3;
+      }
+    }
   }
 
   .page-footer__social {
