@@ -9,54 +9,53 @@
   margin-bottom: 28px;
 }
 
-.nav__item {
+.nav__link {
 
-  a {
-    display: block;
-    width: 100%;
-    padding-top: 26px;
-    padding-bottom: 29px;
-    padding-left: 30px;
-    padding-right: 160px;
-    box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding-top: 26px;
+  padding-bottom: 29px;
+  padding-left: 30px;
+  padding-right: 160px;
+  box-sizing: border-box;
 
-    position: relative;
+  position: relative;
 
-    font-size: 19px;
-    line-height: 24px;
-    font-weight: bold;
-    color: @white;
-    text-decoration: none;
-    background-color: @color-main;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: bold;
+  color: @white;
+  text-decoration: none;
+  background-color: @color-main;
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px @color-main;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px @color-main;
 
-      .nav__icon-interior,
-      .nav__icon-toy {
-        opacity: 0.7;
-      }
-    }
-
-    &:active {
-      color: rgba( 255, 255, 255, 0.3);
-
-      .nav__icon-interior,
-      .nav__icon-toy {
-        opacity: 0.3;
-      }
+    .nav__icon-interior,
+    .nav__icon-toy {
+      opacity: 0.7;
     }
   }
 
-    &--toy a {
-    background: @color-main--dark;
+  &:active {
+    color: rgba( 255, 255, 255, 0.3);
 
-    &:hover {
-      box-shadow: 0 5px @color-main--dark;
+    .nav__icon-interior,
+    .nav__icon-toy {
+      opacity: 0.3;
     }
   }
 }
+
+.nav__item--toy a {
+  background: @color-main--dark;
+
+  &:hover {
+    box-shadow: 0 5px @color-main--dark;
+  }
+}
+
 
 .nav__icon-interior {
   position: absolute;
@@ -159,4 +158,5 @@
   .nav__item a {
     padding-right: 350px;
   }
+
 }

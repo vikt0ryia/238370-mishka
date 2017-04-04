@@ -40,7 +40,7 @@
   font-weight: bold;
 }
 
-.main-nav__item a {
+.main-nav__link {
   display: block;
   padding: 27px;
   padding-left: 75px;
@@ -60,9 +60,7 @@
 
     .main-nav__icon-search,
     .main-nav__icon-cart {
-      path {
-        fill: @color-main;
-      }
+      fill: @color-main;
     }
   }
 
@@ -71,15 +69,14 @@
 
     .main-nav__icon-search,
     .main-nav__icon-cart {
-      path {
-        fill: @color-main;
-        opacity: 0.3;
-      }
+      fill: @color-main;
+      opacity: 0.3;
     }
   }
 }
 
 .main-nav__item--logo {
+
   a {
     padding: 0;
     height: 78px;
@@ -93,7 +90,7 @@
   }
 }
 
-.main-nav__item--logo a[href] {
+.main-nav__link--logo[href] {
 
   &:hover {
 
@@ -123,9 +120,7 @@
   top: 30px;
   left: 30px;
 
-  path {
-    fill: rgba( 0, 0, 0, 0.2);
-  }
+  fill: rgba( 0, 0, 0, 0.2);
 }
 
 .main-nav__icon-cart {
@@ -136,9 +131,7 @@
   top: 30px;
   left: 30px;
 
-  path {
-    fill: rgba( 0, 0, 0, 0.2);
-  }
+  fill: rgba( 0, 0, 0, 0.2);
 }
 
 .main-nav__item--additional,
@@ -240,17 +233,18 @@
     line-height: 88px;
     border-left: 1px solid #ececec;
     padding-left: 93px;
-    margin-right: 50px;
+    padding-right: 50px;
   }
 
   .main-nav__item--search a {
     padding-left: 82px;
     border-left: 1px solid #ececec;
     font-size: 0;
-    margin-left: 100px;
   }
 
   .main-nav__item--logo {
+    background-color: @white;
+    border-bottom: 1px solid #ececec;
     flex-grow: 1;
   }
 
@@ -260,6 +254,7 @@
     height: 88px;
     padding: 0 50px;
     padding-top: 9px;
+    margin-right: 100px;
     box-sizing: border-box;
 
     img {
@@ -311,12 +306,11 @@
   }
 
   .main-nav__item--main a {
-    height: 88px;
-
-    padding: 0;
-    padding: 0 35px;
+    height: 89px;
+    min-width: 235px;
+    box-sizing: border-box;
+    padding: 0 40px;
     margin: 0;
-    margin-right: 50px;
 
     border-bottom: 1px solid #ececec;
     border-left: 1px solid #ececec;
@@ -327,24 +321,24 @@
 
   .main-nav__items li:nth-child(2) a {
     border-left: none;
-    margin-right: 0;
-    margin-left: 50px;
-    padding-right: 45px;
-    padding-left: 0;
+
+    padding-left: 50px;
   }
 
-  .main-nav__item--logo a {
-    justify-content: flex-start;
+  .main-nav__item--logo {
 
-    padding: 0;
-    padding-top: 10px;
+    a {
+      justify-content: flex-start;
+
+      padding: 0;
+      padding-top: 10px;
+      margin: 0;
+      margin-left: 30px;
+    }
 
     img {
       width: 149px;
     }
   }
 
-  .main-nav__item--search a {
-    margin-left: 50px;
-  }
 }
